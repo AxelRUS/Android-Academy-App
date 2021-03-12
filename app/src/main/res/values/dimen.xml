@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="space_56dp">56dp</dimen>
+    <dimen name="space_32dp">32dp</dimen>
+    <dimen name="space_24dp">24dp</dimen>
+    <dimen name="space_16dp">16dp</dimen>
+    <dimen name="space_8dp">8dp</dimen>
+    <dimen name="space_4dp">4dp</dimen>
+
+    <!-- MainActivity -->
+    <dimen name="activity_main_bottom_view_elevation">4dp</dimen>
+    <!-- MainActivity -->
+
+    <!-- Movies List -->
+    <dimen name="movies_list_item_corners">8dp</dimen>
+    <dimen name="movies_list_item_stroke_width">1dp</dimen>
+    <dimen name="movies_list_item_avatar_space">48dp</dimen>
+    <!-- Movies List -->
+
+    <!-- Movie Details -->
+    <dimen name="movie_details_back_icon_space">16dp</dimen>
+    <!-- Movie Details -->
+
+</resources>
