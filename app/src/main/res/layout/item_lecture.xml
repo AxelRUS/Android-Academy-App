@@ -8,7 +8,7 @@
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/youtube_pleer"
         android:layout_width="405dp"
-        android:layout_height="304dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
