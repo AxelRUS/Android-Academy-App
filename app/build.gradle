@@ -42,4 +42,8 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // di
+    implementation "org.koin:koin-android-scope:${rootProject.ver.koin}"
+    implementation "org.koin:koin-android-viewmodel:${rootProject.ver.koin}"
 }
