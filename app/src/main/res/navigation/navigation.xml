@@ -9,5 +9,38 @@
         android:id="@+id/titleFragment"
         android:name="com.team23.androidacademyapp.ui.TitleFragment"
         android:label="title_fragment"
-        tools:layout="@layout/title_fragment" />
+        tools:layout="@layout/title_fragment" >
+        <action
+            android:id="@+id/action_titleFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+        <action
+            android:id="@+id/action_titleFragment_to_mentorsFragment"
+            app:destination="@id/mentorsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.team23.androidacademyapp.ui.QuizFragment"
+        android:label="quiz_fragment"
+        tools:layout="@layout/quiz_fragment" >
+        <action
+            android:id="@+id/action_quizFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_mentorsFragment"
+            app:destination="@id/mentorsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mentorsFragment"
+        android:name="com.team23.androidacademyapp.ui.MentorsFragment"
+        android:label="mentors_fragment"
+        tools:layout="@layout/mentors_fragment" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.team23.androidacademyapp.ui.NewsFragment"
+        android:label="news_fragment"
+        tools:layout="@layout/news_fragment" >
+        <action
+            android:id="@+id/action_newsFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
 </navigation>
