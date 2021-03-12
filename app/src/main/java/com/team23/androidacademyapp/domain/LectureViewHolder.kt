@@ -10,7 +10,7 @@ class LectureViewHolder (itemView: View):RecyclerView.ViewHolder(itemView){
     private val youTubePlayerView:YouTubePlayerView=itemView.findViewById(R.id.youtube_pleer)
 
     fun bind(model: Model){
-     // youTubePlayerView
+       // youTubePlayerView.loadVideo(model.video)
     }
 
 }
