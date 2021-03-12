@@ -10,9 +10,9 @@
         android:layout_width="405dp"
         android:layout_height="304dp"
         android:layout_marginEnd="6dp"
-        app:videoId="d0944nsdnAg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:videoId="d0944nsdnAg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

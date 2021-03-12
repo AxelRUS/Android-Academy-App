@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "925207155293",
+    "project_id": "android-acedemy",
+    "storage_bucket": "android-acedemy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925207155293:android:03b6096fcc81811a2c33b4",
+        "android_client_info": {
+          "package_name": "com.team23.androidacademyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "925207155293-jqbk7844nbihti91mbuadicbqj8hfill.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSc7hkEVyiNCghXY8SdnPz56-SaF45oY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "925207155293-jqbk7844nbihti91mbuadicbqj8hfill.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
