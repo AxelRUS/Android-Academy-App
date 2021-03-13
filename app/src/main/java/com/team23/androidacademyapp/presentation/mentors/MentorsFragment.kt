@@ -76,6 +76,6 @@ class MentorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val name : TextView = itemView.findViewById(R.id.tv_name)
 
     fun onBind(mentor : ModelMentor){
-        name.text = mentor.name
+        name.text = mentor.surname + " " + mentor.name
     }
 }
