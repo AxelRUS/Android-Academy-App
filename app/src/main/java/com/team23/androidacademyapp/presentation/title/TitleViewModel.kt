@@ -20,10 +20,12 @@ class TitleViewModel : ViewModel() {
                 val listData = mutableListOf<Model>()
                 for (document in result) {
                     val mVideo: String = document.getString("video") ?: ""
+                    val mTitle: String = document.getString("title") ?: ""
+                    val mDescription: String = document.getString("description") ?: ""
                     Log.e("XXX",mVideo)
 
                     val model = Model(
-                       mVideo)
+                       mVideo,mTitle,mDescription)
                     listData.add(model)
                 }
                 model.value = listData
