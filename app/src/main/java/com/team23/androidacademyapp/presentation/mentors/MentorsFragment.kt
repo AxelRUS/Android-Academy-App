@@ -42,7 +42,10 @@ class MentorsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MentorsViewModel::class.java)
 
-        viewModel.modelMentor.observe(this.viewLifecycleOwner, { adapter?.bindMentors(it) } )
+        viewModel.modelMentor.observe(this.viewLifecycleOwner, {
+            adapter?.bindMentors(it)
+            adapter?.notifyDataSetChanged()
+        } )
     }
 }
 
