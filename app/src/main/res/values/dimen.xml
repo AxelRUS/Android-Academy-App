@@ -22,4 +22,6 @@
     <dimen name="movie_details_back_icon_space">16dp</dimen>
     <!-- Movie Details -->
 
+    <dimen name="lecture_button_size">100dp</dimen>
+    <dimen name="mentor_avatar_size">100dp</dimen>
 </resources>

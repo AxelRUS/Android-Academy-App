@@ -6,12 +6,22 @@
         <item name="android:layout_height">@dimen/lecture_button_size</item>
     </style>
 
+    <style name="mentor_avatar">
+        <item name="android:layout_width">@dimen/mentor_avatar_size</item>
+        <item name="android:layout_height">@dimen/mentor_avatar_size</item>
+    </style>
+
     <style name="text_title">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">18sp</item>
     </style>
 
     <style name="text_body">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="mentor_list_title">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
         <item name="android:textColor">@color/white</item>
     </style>
 </resources>
