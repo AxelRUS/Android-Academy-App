@@ -61,69 +61,6 @@ class NewsFragment : Fragment() {
 }
 
 
-class NewsAdapter(
-    private val clickListener: OnRecyclerItemClicked
-) : RecyclerView.Adapter<NewsViewHolder>() {
 
-    private val imageOption = RequestOptions()
-        .placeholder(R.drawable.ic_avatar_placeholder)
-        .fallback(R.drawable.ic_avatar_placeholder)
-        .circleCrop()
-
-    private var news : List<ModelNews> = listOf<ModelNews>()
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
-        return NewsViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.item_news,
-                parent,
-                false
-            )
-        )
-    }
-
-    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        holder.onBind(imageOption, news.get(position))
-        holder.itemView.setOnClickListener {
-            clickListener.onClick(news.get(position))
-        }
-    }
-
-    override fun getItemCount(): Int {
-        return news.size
-    }
-
-    fun bindNews(newNews: List<ModelNews>){
-        news = newNews
-    }
-
-}
-
-class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-    private val content : ImageView = itemView.findViewById(R.id.iv_content)
-    private val title : TextView = itemView.findViewById(R.id.tv_title)
-    private val description : TextView = itemView.findViewById(R.id.tv_description)
-
-    fun onBind(options: RequestOptions, news: ModelNews) {
-        title.text = news.title
-        description.text = news.text
-
-        if (news.content.isEmpty()) {
-            content.visibility = View.GONE
-        } else
-            content.visibility = View.VISIBLE
-            Glide.with(context)
-                .load(news.content)
-                //.apply(options)
-                .into(content)
-    }
-}
-
-private val RecyclerView.ViewHolder.context
-    get() = this.itemView.context
-
-interface OnRecyclerItemClicked {
-    fun onClick(news: ModelNews)
-}
 
 data class ModelNews(val title: String, val content : String, val text : String)
