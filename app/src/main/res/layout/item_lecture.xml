@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="4dp"
@@ -18,40 +19,41 @@
 
     <ImageView
         android:id="@+id/iv_quiz"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="110dp"
+        android:layout_height="116dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/youtube_pleer"
         app:layout_constraintTop_toBottomOf="@+id/youtube_pleer"
-        app:layout_constraintVertical_bias="0.867"
-        app:srcCompat="@drawable/iconA" />
+        app:layout_constraintVertical_bias="0.852"
+        app:srcCompat="@drawable/ico" />
 
     <ImageView
         android:id="@+id/iv_workshop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_width="105dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_quiz"
         app:layout_constraintStart_toEndOf="@+id/iv_quiz"
         app:layout_constraintTop_toTopOf="@+id/iv_quiz"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/iconB" />
+        app:layout_constraintVertical_bias="0.909"
+        app:srcCompat="@drawable/icd" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="127dp"
+        android:layout_height="107dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_workshop"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/iv_workshop"
         app:layout_constraintTop_toTopOf="@+id/iv_workshop"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/iconC" />
+        app:srcCompat="@drawable/icoc" />
 
     <TextView
         android:id="@+id/iv_content"
