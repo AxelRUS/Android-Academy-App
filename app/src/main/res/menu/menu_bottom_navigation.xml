@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_lessons"
+        android:icon="@drawable/ic_movie"
+        android:title="@string/lessons" />
+    <item
+        android:id="@+id/menu_item_news"
+        android:icon="@drawable/ic_news"
+        android:title="@string/news"
+        />
+
+    <item
+        android:id="@+id/menu_item_mentors"
+        android:icon="@drawable/ic_mentors"
+        android:title="@string/mentors"
+        />
+</menu>
