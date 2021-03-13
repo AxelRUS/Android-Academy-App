@@ -6,7 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.RecyclerView
 import com.team23.androidacademyapp.R
+import com.team23.androidacademyapp.domain.LectureAdapter
+import com.team23.androidacademyapp.presentation.title.TitleViewModel
 
 class NewsFragment : Fragment() {
 
@@ -26,7 +30,17 @@ class NewsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(NewsViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        val listNews: RecyclerView? = view?.findViewById(R.id.rv_news)
+        val myAdapter = NewsAdapter()
+        listNews?.adapter = myAdapter
+
+        viewModel.modelNews.observe(viewLifecycleOwner, Observer {modelNews->
+            modelNews?.let {
+                myAdapter.submitList(modelNews)
+                myAdapter.notifyDataSetChanged()
+            }
+        })
     }
 
 }

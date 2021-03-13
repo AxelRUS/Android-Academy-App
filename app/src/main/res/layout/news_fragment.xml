@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".presentation.news.NewsFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_news"
+        tools:listitem="@layout/item_news"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello"
-        android:textColor="@color/white" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

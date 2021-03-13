@@ -1,14 +1,12 @@
 package com.team23.androidacademyapp.presentation.title
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.navigation.Navigation
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.team23.androidacademyapp.R
 import com.team23.androidacademyapp.domain.LectureAdapter
@@ -27,32 +25,22 @@ class TitleFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.title_fragment, container, false)
 
-        val button: Button? = view?.findViewById(R.id.iv_quiz)
-        button?.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_quizFragment)
-        )
-
-
-        /*val quiz: ImageView? = view?.findViewById(R.id.iv_quiz)
-        quiz?.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_quizFragment))
-*/
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         viewModel = ViewModelProvider(this).get(TitleViewModel::class.java)
 
-        
 
         val listLecture: RecyclerView? = view?.findViewById(R.id.lecture_list)
         val myAdapter = LectureAdapter()
         listLecture?.adapter = myAdapter
 
 
-
         viewModel = ViewModelProvider(this).get(TitleViewModel::class.java)
-        viewModel.model.observe(viewLifecycleOwner, Observer {model->
+        viewModel.model.observe(viewLifecycleOwner, Observer { model ->
             model?.let {
                 myAdapter.submitList(model)
                 myAdapter.notifyDataSetChanged()
@@ -60,5 +48,4 @@ class TitleFragment : Fragment() {
         })
 
     }
-
 }

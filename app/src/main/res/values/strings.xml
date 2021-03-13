@@ -3,4 +3,5 @@
     <string name="lessons">Уроки</string>
     <string name="news">Новости</string>
     <string name="mentors">Менторы</string>
+    <string name="newsdescription">NewsDescription</string>
 </resources>
