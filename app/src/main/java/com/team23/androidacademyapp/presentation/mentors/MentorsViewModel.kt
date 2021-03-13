@@ -14,7 +14,7 @@ class MentorsViewModel : ViewModel() {
         get() = modelMentor
 
     init {
-        FirebaseFirestore.getInstance().collection("lecture").get()
+        FirebaseFirestore.getInstance().collection("mentor").get()
             .addOnSuccessListener { result ->
                 val listData = mutableListOf<ModelMentor>()
                 for (document in result) {
@@ -22,12 +22,12 @@ class MentorsViewModel : ViewModel() {
                     val mSurname: String = document.getString("surname") ?: ""
                     val mContact: String = document.getString("description") ?: ""
                     val mFoto: String = document.getString("foto") ?: ""
-                    Log.e("XXX", mName)
+                    Log.e("XXXX", mName)
 
-                    val model = ModelMentor(
+                    val mModel = ModelMentor(
                         mName, mContact, mSurname, mFoto
                     )
-                    listData.add(model)
+                    listData.add(mModel)
                 }
                 modelMentor.value = listData
             }
