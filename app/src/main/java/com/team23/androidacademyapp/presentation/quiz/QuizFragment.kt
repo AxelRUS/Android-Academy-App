@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.team23.androidacademyapp.R
+import com.team23.androidacademyapp.domain.models.Model
 
 class QuizFragment : Fragment() {
 
@@ -27,6 +28,8 @@ class QuizFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(QuizViewModel::class.java)
         // TODO: Use the ViewModel
+
+        val model = getArguments()?.getParcelable<Model>("model");
     }
 
 }
