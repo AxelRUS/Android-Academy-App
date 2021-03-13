@@ -1,4 +1,4 @@
-package com.team23.androidacademyapp.ui
+package com.team23.androidacademyapp.presentation
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,24 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import com.team23.androidacademyapp.R
 
-class QuizFragment : Fragment() {
+class MentorsFragment : Fragment() {
 
     companion object {
-        fun newInstance() = QuizFragment()
+        fun newInstance() = MentorsFragment()
     }
 
-    private lateinit var viewModel: QuizViewModel
+    private lateinit var viewModel: MentorsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.quiz_fragment, container, false)
+        return inflater.inflate(R.layout.mentors_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(QuizViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(MentorsViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
