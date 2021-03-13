@@ -4,6 +4,7 @@ package com.team23.androidacademyapp.presentation.news
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
+import com.team23.androidacademyapp.domain.models.ModelNews
 
 
 class NewsViewModel : ViewModel() {

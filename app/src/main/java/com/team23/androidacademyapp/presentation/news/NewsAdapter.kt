@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.request.RequestOptions
 import com.team23.androidacademyapp.R
+import com.team23.androidacademyapp.domain.models.ModelNews
 
 class NewsAdapter(
     private val clickListener: OnRecyclerItemClicked
