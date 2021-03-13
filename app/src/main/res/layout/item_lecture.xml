@@ -11,73 +11,68 @@
         android:id="@+id/youtube_pleer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:videoId="Gb71h-cEUZs" />
+        app:videoId="Gb71h-cEUZs"/>
 
     <ImageView
         android:id="@+id/iv_workshop"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="@dimen/space_16dp"
+        android:layout_marginBottom="@dimen/space_16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/iv_feedback"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/iv_quiz"
         app:layout_constraintTop_toBottomOf="@+id/tv_description"
-        app:srcCompat="@drawable/icd" />
+        app:srcCompat="@drawable/icd"
+        style="@style/lecture_button" />
 
     <ImageView
         android:id="@+id/iv_quiz"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_workshop"
         app:layout_constraintEnd_toStartOf="@+id/iv_workshop"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/iv_workshop"
-        app:srcCompat="@drawable/ico" />
+        app:srcCompat="@drawable/ico"
+        style="@style/lecture_button" />
 
     <ImageView
         android:id="@+id/iv_feedback"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="@+id/iv_workshop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/iv_workshop"
         app:layout_constraintTop_toTopOf="@+id/iv_workshop"
-        app:srcCompat="@drawable/icoc" />
+        app:srcCompat="@drawable/icoc"
+        style="@style/lecture_button" />
 
     <TextView
         android:id="@+id/iv_content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:text="Title"
-        android:textColor="@color/white"
-        android:textSize="18sp"
+        android:layout_marginStart="@dimen/space_16dp"
+        android:layout_marginTop="@dimen/space_16dp"
+        android:layout_marginEnd="@dimen/space_16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/youtube_pleer"
-        app:layout_constraintTop_toBottomOf="@+id/youtube_pleer" />
+        app:layout_constraintTop_toBottomOf="@+id/youtube_pleer"
+        tools:text="Title"
+        style="@style/text_title" />
 
     <TextView
         android:id="@+id/tv_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Description"
-        android:textColor="@color/white"
+        android:layout_marginStart="@dimen/space_16dp"
+        android:layout_marginTop="@dimen/space_16dp"
+        android:layout_marginEnd="@dimen/space_16dp"
+        tools:text="Description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/youtube_pleer"
-        app:layout_constraintTop_toBottomOf="@+id/iv_content" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_content"
+        style="@style/text_body" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
