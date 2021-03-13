@@ -10,13 +10,13 @@ import com.team23.androidacademyapp.R
 import com.team23.androidacademyapp.domain.models.Model
 
 
-class LectureDetailFragment : AppCompatActivity() {
+class LectureDetailActivity : AppCompatActivity() {
 
     private lateinit var viewModel: LectureDetailViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.lecture_detail_fragment)
+        setContentView(R.layout.activity_lecture_detail)
 
         val model = intent.extras?.getParcelable<Model>("lecture")!!
         //viewModel = ViewModelProvider(this).get(LectureDetailViewModel::class.java)
@@ -31,7 +31,6 @@ class LectureDetailFragment : AppCompatActivity() {
         getLifecycle().addObserver(youTubePlayerView);
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                val videoId = "S0Q4gqBUs7c"
                 youTubePlayer.loadVideo(model.video, 0f)
             }
         })

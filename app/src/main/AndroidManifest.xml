@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.title.LectureDetailFragment">
+            android:name=".presentation.title.LectureDetailActivity">
 
         </activity>
     </application>

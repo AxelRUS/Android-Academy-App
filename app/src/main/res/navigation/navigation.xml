@@ -41,9 +41,9 @@
     </fragment>
     <fragment
         android:id="@+id/lectureDetailFragment"
-        android:name="com.team23.androidacademyapp.presentation.title.LectureDetailFragment"
+        android:name="com.team23.androidacademyapp.presentation.title.LectureDetailActivity"
         android:label="lecture_detail_fragment"
-        tools:layout="@layout/lecture_detail_fragment" >
+        tools:layout="@layout/activity_lecture_detail" >
         <argument
             android:name="lecture"
             app:argType="com.team23.androidacademyapp.domain.models.Model" />
