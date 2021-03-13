@@ -102,14 +102,20 @@ class NewsAdapter(
 class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val content : ImageView = itemView.findViewById(R.id.iv_content)
     private val title : TextView = itemView.findViewById(R.id.tv_title)
+    private val description : TextView = itemView.findViewById(R.id.tv_description)
 
-    fun onBind(options: RequestOptions, news: ModelNews){
+    fun onBind(options: RequestOptions, news: ModelNews) {
         title.text = news.title
+        description.text = news.text
 
-        Glide.with(context)
-            .load(news.content)
-            //.apply(options)
-            .into(content)
+        if (news.content.isEmpty()) {
+            content.visibility = View.GONE
+        } else
+            content.visibility = View.VISIBLE
+            Glide.with(context)
+                .load(news.content)
+                //.apply(options)
+                .into(content)
     }
 }
 
