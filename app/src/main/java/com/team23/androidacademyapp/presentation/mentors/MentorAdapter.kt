@@ -21,7 +21,7 @@ class MentorAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MentorViewHolder {
         return MentorViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_mentor,
+                R.layout.ment_item,
                 parent,
                 false
             )

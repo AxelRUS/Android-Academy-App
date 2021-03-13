@@ -29,7 +29,7 @@ class QuizFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(QuizViewModel::class.java)
         // TODO: Use the ViewModel
 
-        val model = getArguments()?.getParcelable<Model>("model");
+        val model = getArguments()?.getParcelable<Model>("model")
     }
 
 }

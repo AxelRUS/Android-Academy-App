@@ -34,7 +34,6 @@ class LectureViewHolder (
        // lifecycle.addObserver(youTubePlayerView)
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                val videoId = "S0Q4gqBUs7c"
                 youTubePlayer.cueVideo(model.video, 0f)
             }
         })
