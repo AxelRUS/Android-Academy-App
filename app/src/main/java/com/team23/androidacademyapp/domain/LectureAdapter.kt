@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.team23.androidacademyapp.R
+import com.team23.androidacademyapp.domain.models.Model
 
 
 class LectureAdapter() : ListAdapter<Model, LectureViewHolder>(DiffCallBack()) {

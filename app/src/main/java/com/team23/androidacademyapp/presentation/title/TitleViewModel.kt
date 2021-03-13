@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
-import com.team23.androidacademyapp.domain.Model
+import com.team23.androidacademyapp.domain.models.Model
 
 class TitleViewModel : ViewModel() {
 

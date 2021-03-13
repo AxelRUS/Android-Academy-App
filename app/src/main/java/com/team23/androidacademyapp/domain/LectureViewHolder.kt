@@ -5,6 +5,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import com.team23.androidacademyapp.R
+import com.team23.androidacademyapp.domain.models.Model
 
 class LectureViewHolder (itemView: View):RecyclerView.ViewHolder(itemView){
 

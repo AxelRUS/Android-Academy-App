@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.team23.androidacademyapp.R
+import com.team23.androidacademyapp.domain.models.ModelMentor
 
 
 class MentorsFragment : Fragment() {
