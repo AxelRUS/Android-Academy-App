@@ -1,4 +1,4 @@
-package com.team23.androidacademyapp.presentation
+package com.team23.androidacademyapp.presentation.title
 
 import android.util.Log
 import androidx.lifecycle.LiveData
