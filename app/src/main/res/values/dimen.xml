@@ -25,7 +25,8 @@
     <dimen name="lecture_button_size">100dp</dimen>
     <dimen name="mentor_avatar_size">100dp</dimen>
 
-    <dimen name="list_item_horizantal_padding">8dp</dimen>
+    <dimen name="list_item_horizantal_margin">4dp</dimen>
 
     <dimen name="news_content_image_height">200dp</dimen>
+    <dimen name="list_horizontal_padding">4dp</dimen>
 </resources>
