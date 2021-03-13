@@ -9,7 +9,7 @@ import com.team23.androidacademyapp.R
 import com.team23.androidacademyapp.domain.models.ModelNews
 
 class NewsAdapter(
-    private val clickListener: OnRecyclerItemClicked
+
 ) : RecyclerView.Adapter<NewsViewHolder>() {
 
     private val imageOption = RequestOptions()
@@ -31,9 +31,6 @@ class NewsAdapter(
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         holder.onBind(imageOption, news[position])
-        holder.itemView.setOnClickListener {
-            clickListener.onClick(news[position])
-        }
     }
 
     override fun getItemCount(): Int {

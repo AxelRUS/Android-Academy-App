@@ -33,7 +33,7 @@ class NewsFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(NewsViewModel::class.java)
         recycler = view.findViewById<RecyclerView>(R.id.rv_list)
         recycler?.layoutManager = LinearLayoutManager(requireContext())
-        adapter = NewsAdapter(clickListener)
+        adapter = NewsAdapter()
         recycler?.adapter = adapter
 
         viewModel.modelNews.observe(this.viewLifecycleOwner, {
@@ -42,10 +42,5 @@ class NewsFragment : Fragment() {
         })
     }
 
-    private val clickListener = object : OnRecyclerItemClicked {
-        override fun onClick(news: ModelNews) {
-
-        }
-    }
 
 }
