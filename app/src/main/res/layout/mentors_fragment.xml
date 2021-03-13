@@ -5,9 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".presentation.mentors.MentorsFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        tools:listitem="@layout/item_mentor" />
 
 </FrameLayout>
