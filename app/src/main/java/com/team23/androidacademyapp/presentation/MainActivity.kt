@@ -1,7 +1,8 @@
-package com.team23.androidacademyapp
+package com.team23.androidacademyapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.team23.androidacademyapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
