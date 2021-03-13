@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/titleFragment"
-        android:name="com.team23.androidacademyapp.ui.TitleFragment"
+        android:name="com.team23.androidacademyapp.presentation.TitleFragment"
         android:label="title_fragment"
         tools:layout="@layout/title_fragment" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.team23.androidacademyapp.ui.QuizFragment"
+        android:name="com.team23.androidacademyapp.presentation.QuizFragment"
         android:label="quiz_fragment"
         tools:layout="@layout/quiz_fragment" >
         <action
@@ -31,12 +31,12 @@
     </fragment>
     <fragment
         android:id="@+id/mentorsFragment"
-        android:name="com.team23.androidacademyapp.ui.MentorsFragment"
+        android:name="com.team23.androidacademyapp.presentation.MentorsFragment"
         android:label="mentors_fragment"
         tools:layout="@layout/mentors_fragment" />
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.team23.androidacademyapp.ui.NewsFragment"
+        android:name="com.team23.androidacademyapp.presentation.NewsFragment"
         android:label="news_fragment"
         tools:layout="@layout/news_fragment" >
         <action

@@ -1,4 +1,4 @@
-package com.team23.androidacademyapp.ui
+package com.team23.androidacademyapp.presentation
 
 import androidx.lifecycle.ViewModel
 

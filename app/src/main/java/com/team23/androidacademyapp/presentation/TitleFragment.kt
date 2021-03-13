@@ -1,4 +1,4 @@
-package com.team23.androidacademyapp.ui
+package com.team23.androidacademyapp.presentation
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,10 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.team23.androidacademyapp.R
 import com.team23.androidacademyapp.domain.LectureAdapter
