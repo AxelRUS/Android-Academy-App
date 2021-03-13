@@ -6,18 +6,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ExpandableListView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.team23.androidacademyapp.R
 import com.team23.androidacademyapp.domain.models.ModelMentor
-
+import com.team23.androidacademyapp.presentation.MainActivity
 
 class MentorsFragment : Fragment() {
 
@@ -40,8 +42,8 @@ class MentorsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recycler = view.findViewById<RecyclerView>(R.id.rv_list)
-        recycler?.layoutManager = LinearLayoutManager(requireContext())
-        adapter = MentorAdapter()
+        recycler?.layoutManager = GridLayoutManager(requireContext(), 2)
+        adapter = MentorAdapter(clickListener)
         recycler?.adapter = adapter
     }
 
@@ -54,9 +56,19 @@ class MentorsFragment : Fragment() {
             adapter?.notifyDataSetChanged()
         })
     }
+
+    private val clickListener = object : OnRecyclerItemClicked {
+        override fun onClick(mentor: ModelMentor) {
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(mentor.contact)
+            startActivity(this@MentorsFragment.requireContext(), i, null)
+        }
+    }
 }
 
-class MentorAdapter : RecyclerView.Adapter<MentorViewHolder>() {
+class MentorAdapter(
+    private val clickListener: OnRecyclerItemClicked
+) : RecyclerView.Adapter<MentorViewHolder>() {
 
     private val imageOption = RequestOptions()
         .placeholder(R.drawable.ic_avatar_placeholder)
@@ -77,6 +89,9 @@ class MentorAdapter : RecyclerView.Adapter<MentorViewHolder>() {
 
     override fun onBindViewHolder(holder: MentorViewHolder, position: Int) {
         holder.onBind(imageOption, mentors.get(position))
+        holder.itemView.setOnClickListener {
+            clickListener.onClick(mentors.get(position))
+        }
     }
 
     override fun getItemCount(): Int {
@@ -92,16 +107,10 @@ class MentorAdapter : RecyclerView.Adapter<MentorViewHolder>() {
 class MentorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val avatar : ImageView = itemView.findViewById(R.id.iv_avatar)
     private val name : TextView = itemView.findViewById(R.id.tv_name)
-    private val contact : TextView = itemView.findViewById(R.id.tv_contact)
+    //private val contact : TextView = itemView.findViewById(R.id.tv_contact)
 
     fun onBind(options: RequestOptions, mentor: ModelMentor){
         name.text = mentor.surname + " " + mentor.name
-        contact.text = mentor.contact
-        contact.setOnClickListener {
-            val i = Intent(Intent.ACTION_VIEW)
-            i.data = Uri.parse(mentor.contact)
-            startActivity(context, i, null)
-        }
 
         Glide.with(context)
             .load(mentor.foto)
@@ -112,3 +121,7 @@ class MentorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
 private val RecyclerView.ViewHolder.context
     get() = this.itemView.context
+
+interface OnRecyclerItemClicked {
+    fun onClick(mentor: ModelMentor)
+}
