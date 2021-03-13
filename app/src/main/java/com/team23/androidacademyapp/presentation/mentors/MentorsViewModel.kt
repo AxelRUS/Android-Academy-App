@@ -5,27 +5,28 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
-import com.team23.androidacademyapp.domain.Model
 
 class MentorsViewModel : ViewModel() {
 
     private val firebaseFirestone: FirebaseFirestore = FirebaseFirestore.getInstance()
-    val modelMentor: MutableLiveData<MutableList<Model>> = MutableLiveData()
-    val modelLiveData: LiveData<MutableList<Model>>
+    val modelMentor: MutableLiveData<MutableList<ModelMentor>> = MutableLiveData()
+    val modelLiveData: LiveData<MutableList<ModelMentor>>
         get() = modelMentor
 
     init {
         FirebaseFirestore.getInstance().collection("lecture").get()
             .addOnSuccessListener { result ->
-                val listData = mutableListOf<Model>()
+                val listData = mutableListOf<ModelMentor>()
                 for (document in result) {
-                    val mVideo: String = document.getString("video") ?: ""
-                    val mTitle: String = document.getString("title") ?: ""
-                    val mDescription: String = document.getString("description") ?: ""
-                    Log.e("XXX",mVideo)
+                    val mName: String = document.getString("name") ?: ""
+                    val mSurname: String = document.getString("surname") ?: ""
+                    val mContact: String = document.getString("description") ?: ""
+                    val mFoto: String = document.getString("foto") ?: ""
+                    Log.e("XXX", mName)
 
-                    val model = Model(
-                        mVideo,mTitle,mDescription)
+                    val model = ModelMentor(
+                        mName, mContact, mSurname, mFoto
+                    )
                     listData.add(model)
                 }
                 modelMentor.value = listData
