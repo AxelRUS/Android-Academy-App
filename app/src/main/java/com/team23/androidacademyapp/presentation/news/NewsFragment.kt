@@ -75,7 +75,7 @@ class NewsAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         return NewsViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_mentor,
+                R.layout.item_news,
                 parent,
                 false
             )
@@ -108,7 +108,7 @@ class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
         Glide.with(context)
             .load(news.content)
-            .apply(options)
+            //.apply(options)
             .into(content)
     }
 }
