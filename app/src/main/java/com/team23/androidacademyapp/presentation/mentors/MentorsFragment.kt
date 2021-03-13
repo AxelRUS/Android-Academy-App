@@ -10,6 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.team23.androidacademyapp.R
 
 class MentorsFragment : Fragment() {
@@ -51,6 +53,11 @@ class MentorsFragment : Fragment() {
 
 class MentorAdapter : RecyclerView.Adapter<MentorViewHolder>() {
 
+    private val imageOption = RequestOptions()
+        .placeholder(R.drawable.ic_avatar_placeholder)
+        .fallback(R.drawable.ic_avatar_placeholder)
+        .circleCrop()
+
     private var mentors : List<ModelMentor> = listOf<ModelMentor>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MentorViewHolder {
@@ -58,7 +65,7 @@ class MentorAdapter : RecyclerView.Adapter<MentorViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MentorViewHolder, position: Int) {
-        holder.onBind(mentors.get(position))
+        holder.onBind(imageOption, mentors.get(position))
     }
 
     override fun getItemCount(): Int {
@@ -75,7 +82,15 @@ class MentorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val avatar : ImageView = itemView.findViewById(R.id.iv_avatar)
     private val name : TextView = itemView.findViewById(R.id.tv_name)
 
-    fun onBind(mentor : ModelMentor){
+    fun onBind(options: RequestOptions, mentor : ModelMentor){
         name.text = mentor.surname + " " + mentor.name
+
+        Glide.with(context)
+            .load(mentor.foto)
+            .apply(options)
+            .into(avatar)
     }
 }
+
+private val RecyclerView.ViewHolder.context
+    get() = this.itemView.context
