@@ -1,4 +1,4 @@
-package com.team23.androidacademyapp.presentation
+package com.team23.androidacademyapp.presentation.quiz
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
