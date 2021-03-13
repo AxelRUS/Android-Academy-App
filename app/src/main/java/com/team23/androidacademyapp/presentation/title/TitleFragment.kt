@@ -1,7 +1,6 @@
 package com.team23.androidacademyapp.presentation.title
 
 import android.content.Intent
-import android.graphics.ColorSpace
 import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -18,8 +17,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.team23.androidacademyapp.R
 import com.team23.androidacademyapp.domain.LectureAdapter
 import com.team23.androidacademyapp.domain.models.Model
-import com.team23.androidacademyapp.domain.models.ModelMentor
-import com.team23.androidacademyapp.presentation.mentors.OnRecyclerItemClicked
 
 class TitleFragment : Fragment() {
 
@@ -52,7 +49,7 @@ class TitleFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(TitleViewModel::class.java)
 
         val listLecture: RecyclerView? = view?.findViewById(R.id.lecture_list)
-        val myAdapter = LectureAdapter(clickListener)
+        val myAdapter = LectureAdapter(onQuizeClickListener, onWorkshopClickListener, onFeedbackClickListener)
         listLecture?.adapter = myAdapter
 
         viewModel = ViewModelProvider(this).get(TitleViewModel::class.java)
@@ -64,15 +61,40 @@ class TitleFragment : Fragment() {
         })
     }
 
-    private val clickListener = object : OnQuizClickListener {
+    private val onQuizeClickListener = object : OnQuizClickListener {
         override fun onClick(model: Model) {
             val args = Bundle()
             args.putParcelable("model", model)
             findNavController().navigate(R.id.action_titleFragment_to_quizFragment, )
         }
     }
+
+    private val onWorkshopClickListener = object : OnWorkshopClickListener {
+        override fun onClick(model: Model) {
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(model.wokrshop)
+            ContextCompat.startActivity(this@TitleFragment.requireContext(), i, null)
+
+         }
+    }
+
+    private val onFeedbackClickListener = object : OnFeedbackClickListener {
+        override fun onClick(model: Model) {
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(model.feedback)
+            ContextCompat.startActivity(this@TitleFragment.requireContext(), i, null)
+        }
+    }
 }
 
 interface OnQuizClickListener{
+    fun onClick(model : Model)
+}
+
+interface OnWorkshopClickListener{
+    fun onClick(model : Model)
+}
+
+interface OnFeedbackClickListener{
     fun onClick(model : Model)
 }

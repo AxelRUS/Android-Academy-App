@@ -8,18 +8,24 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.team23.androidacademyapp.R
 import com.team23.androidacademyapp.domain.models.Model
+import com.team23.androidacademyapp.presentation.title.OnFeedbackClickListener
 import com.team23.androidacademyapp.presentation.title.OnQuizClickListener
+import com.team23.androidacademyapp.presentation.title.OnWorkshopClickListener
 
 
 class LectureAdapter(
-    private val onQuizClickListener : OnQuizClickListener
+    private val onQuizClickListener : OnQuizClickListener,
+    private val onWorkshopClickListener: OnWorkshopClickListener,
+    private val onFeedbackClickListener: OnFeedbackClickListener
 ) : ListAdapter<Model, LectureViewHolder>(DiffCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LectureViewHolder =
         LectureViewHolder(
             itemView = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_lecture, parent, false),
-            onQuizClickListener
+            onQuizClickListener,
+            onWorkshopClickListener,
+            onFeedbackClickListener
         )
 
     override fun onBindViewHolder(holder: LectureViewHolder, position: Int) {

@@ -3,5 +3,11 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Model(val video:String,val title:String,val description:String,) : Parcelable {
+data class Model(
+    val video:String,
+    val title:String,
+    val description:String,
+    val wokrshop:String,
+    val feedback:String
+) : Parcelable {
 }

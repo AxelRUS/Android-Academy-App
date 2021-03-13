@@ -22,10 +22,12 @@ class TitleViewModel : ViewModel() {
                     val mVideo: String = document.getString("video") ?: ""
                     val mTitle: String = document.getString("title") ?: ""
                     val mDescription: String = document.getString("description") ?: ""
+                    val mWorkshop: String = document.getString("workshop") ?: ""
+                    val mFeedback: String = document.getString("feedback") ?: ""
                     Log.e("XXX",mVideo)
 
                     val model = Model(
-                       mVideo,mTitle,mDescription)
+                       mVideo,mTitle,mDescription, mWorkshop, mFeedback)
                     listData.add(model)
                 }
                 model.value = listData
