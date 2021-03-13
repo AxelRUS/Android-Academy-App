@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="@+id/youtube_pleer"
         app:layout_constraintTop_toBottomOf="@+id/youtube_pleer"
         app:layout_constraintVertical_bias="0.867"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/iconA" />
 
     <ImageView
         android:id="@+id/iv_workshop"
@@ -38,7 +38,7 @@
         app:layout_constraintStart_toEndOf="@+id/iv_quiz"
         app:layout_constraintTop_toTopOf="@+id/iv_quiz"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/iconB" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -51,7 +51,7 @@
         app:layout_constraintStart_toEndOf="@+id/iv_workshop"
         app:layout_constraintTop_toTopOf="@+id/iv_workshop"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/iconC" />
 
     <TextView
         android:id="@+id/iv_content"

@@ -36,10 +36,6 @@ class MentorsFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(MentorsViewModel::class.java)
 
         recycler = view.findViewById<RecyclerView>(R.id.rv_list)
-        /*recycler?.layoutManager = GridLayoutManager(
-            requireContext(),
-            resources.getInteger(R.integer.mentor_list_column_count)
-        )*/
         adapter = MentorAdapter(clickListener)
         recycler?.adapter = adapter
 
