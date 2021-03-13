@@ -25,8 +25,8 @@ class LectureDetailActivity : AppCompatActivity() {
         val description = findViewById<TextView>(R.id.tv_description)
         val youTubePlayerView = findViewById<YouTubePlayerView>(R.id.youtube_pleer)
 
-        title.text = model?.title
-        description.text = model?.description
+        title.text = model.title
+        description.text = model.description
 
         getLifecycle().addObserver(youTubePlayerView);
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
