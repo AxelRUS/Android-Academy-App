@@ -42,7 +42,7 @@ class MentorsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recycler = view.findViewById<RecyclerView>(R.id.rv_list)
-        recycler?.layoutManager = GridLayoutManager(requireContext(), 2)
+        recycler?.layoutManager = GridLayoutManager(requireContext(), resources.getInteger(R.integer.mentor_list_column_count))
         adapter = MentorAdapter(clickListener)
         recycler?.adapter = adapter
     }
@@ -107,7 +107,6 @@ class MentorAdapter(
 class MentorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val avatar : ImageView = itemView.findViewById(R.id.iv_avatar)
     private val name : TextView = itemView.findViewById(R.id.tv_name)
-    //private val contact : TextView = itemView.findViewById(R.id.tv_contact)
 
     fun onBind(options: RequestOptions, mentor: ModelMentor){
         name.text = mentor.surname + " " + mentor.name
