@@ -42,13 +42,13 @@ class MentorsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MentorsViewModel::class.java)
 
-        viewModel.mentorsList.observe(this.viewLifecycleOwner, { adapter?.bindMentors(it) } )
+        viewModel.modelMentor.observe(this.viewLifecycleOwner, { adapter?.bindMentors(it) } )
     }
 }
 
 class MentorAdapter : RecyclerView.Adapter<MentorViewHolder>() {
 
-    private var mentors : List<Mentor> = listOf<Mentor>()
+    private var mentors : List<ModelMentor> = listOf<ModelMentor>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MentorViewHolder {
         return MentorViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_mentor, parent, false))
@@ -62,7 +62,7 @@ class MentorAdapter : RecyclerView.Adapter<MentorViewHolder>() {
         return mentors.size
     }
 
-    fun bindMentors(newMentors : List<Mentor>){
+    fun bindMentors(newMentors : List<ModelMentor>){
         mentors = newMentors
     }
 
@@ -72,11 +72,7 @@ class MentorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val avatar : ImageView = itemView.findViewById(R.id.iv_avatar)
     private val name : TextView = itemView.findViewById(R.id.tv_name)
 
-    fun onBind(mentor : Mentor){
+    fun onBind(mentor : ModelMentor){
         name.text = mentor.name
     }
-}
-
-data class Mentor(val name : String){
-
 }

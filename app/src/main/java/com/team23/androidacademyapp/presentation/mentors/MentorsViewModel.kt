@@ -10,7 +10,7 @@ class MentorsViewModel : ViewModel() {
 
     private val firebaseFirestone: FirebaseFirestore = FirebaseFirestore.getInstance()
     val modelMentor: MutableLiveData<MutableList<ModelMentor>> = MutableLiveData()
-    val modelLiveData: LiveData<MutableList<ModelMentor>>
+    private val modelLiveData: LiveData<MutableList<ModelMentor>>
         get() = modelMentor
 
     init {
