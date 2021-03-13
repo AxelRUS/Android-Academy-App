@@ -8,9 +8,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.team23.androidacademyapp.R
 import com.team23.androidacademyapp.domain.models.Model
+import com.team23.androidacademyapp.presentation.title.OnItemClick
 
 
-class LectureAdapter() : ListAdapter<Model, LectureViewHolder>(DiffCallBack()) {
+class LectureAdapter(
+    private val onClickListener : OnItemClick
+) : ListAdapter<Model, LectureViewHolder>(DiffCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LectureViewHolder =
         LectureViewHolder(
@@ -21,6 +24,9 @@ class LectureAdapter() : ListAdapter<Model, LectureViewHolder>(DiffCallBack()) {
     override fun onBindViewHolder(holder: LectureViewHolder, position: Int) {
         val model = getItem(position)
         holder.bind(model)
+        holder.itemView.setOnClickListener{
+            onClickListener.onClick(model)
+        }
     }
 }
 
