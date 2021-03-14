@@ -4,8 +4,10 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.FirebaseFirestore
 import com.team23.androidacademyapp.domain.models.Model
+import kotlinx.coroutines.launch
 
 class LectureViewModel : ViewModel() {
 
@@ -15,6 +17,8 @@ class LectureViewModel : ViewModel() {
         get() = model
 
     init {
+        viewModelScope.launch {
+
         FirebaseFirestore.getInstance().collection("lecture").get()
             .addOnSuccessListener { result ->
                 val listData = mutableListOf<Model>()
@@ -30,8 +34,9 @@ class LectureViewModel : ViewModel() {
                        mVideo,mTitle,mDescription, mWorkshop, mFeedback)
                     listData.add(model)
                 }
-                model.value = listData
+                model.postValue(listData)
             }
+        }
     }
 
 }
