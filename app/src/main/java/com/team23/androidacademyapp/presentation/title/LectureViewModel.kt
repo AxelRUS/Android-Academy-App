@@ -42,6 +42,9 @@ class LectureViewModel : ViewModel() {
                     try{
                         mRightAnswer = Integer.parseInt(document.getString("rightanswer")  ?: "0")
                     }catch (e: Exception){}
+                    if (mRightAnswer == 0) {
+                        Log.w("X1", "Некорретный ответ в ${mTitle} ")
+                    }
                     Log.e("XXX",mVideo)
 
                     val quizList = listOf<Quiz>(
