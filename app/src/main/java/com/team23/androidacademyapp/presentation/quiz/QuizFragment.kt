@@ -32,7 +32,7 @@ class QuizFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        quizAdapter = QuizAdapter(onAnswerListener)
+        quizAdapter = QuizAdapter()
         view.findViewById<ViewPager2>(R.id.pager).apply {
             this.adapter = quizAdapter
         }
