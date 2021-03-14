@@ -24,7 +24,7 @@ class TitleFragment : Fragment() {
         fun newInstance() = TitleFragment()
     }
 
-    private lateinit var viewModel: TitleViewModel
+    private lateinit var viewModel: LectureViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,13 +46,13 @@ class TitleFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(TitleViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(LectureViewModel::class.java)
 
         val listLecture: RecyclerView? = view?.findViewById(R.id.lecture_list)
         val myAdapter = LectureAdapter(onQuizeClickListener, onWorkshopClickListener, onFeedbackClickListener)
         listLecture?.adapter = myAdapter
 
-        viewModel = ViewModelProvider(this).get(TitleViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(LectureViewModel::class.java)
         viewModel.model.observe(viewLifecycleOwner, Observer {model->
             model?.let {
                 myAdapter.submitList(model)

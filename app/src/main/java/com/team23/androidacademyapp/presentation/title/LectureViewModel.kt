@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
 import com.team23.androidacademyapp.domain.models.Model
 
-class TitleViewModel : ViewModel() {
+class LectureViewModel : ViewModel() {
 
     private val firebaseFirestone: FirebaseFirestore = FirebaseFirestore.getInstance()
     val model: MutableLiveData<MutableList<Model>> = MutableLiveData()

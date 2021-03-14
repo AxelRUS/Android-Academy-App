@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.team23.androidacademyapp.R
-import com.team23.androidacademyapp.domain.models.ModelMentor
+import com.team23.androidacademyapp.domain.models.Mentor
 
 class MentorsFragment : Fragment() {
 
@@ -46,7 +46,7 @@ class MentorsFragment : Fragment() {
     }
 
     private val clickListener = object : OnRecyclerItemClicked {
-        override fun onClick(mentor: ModelMentor) {
+        override fun onClick(mentor: Mentor) {
             val i = Intent(Intent.ACTION_VIEW)
             i.data = Uri.parse(mentor.contact)
             startActivity(this@MentorsFragment.requireContext(), i, null)
