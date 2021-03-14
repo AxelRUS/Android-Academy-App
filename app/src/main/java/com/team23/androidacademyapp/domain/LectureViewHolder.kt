@@ -27,6 +27,11 @@ class LectureViewHolder (
     private val ivWorkshop:ImageView = itemView.findViewById(R.id.iv_workshop)
     private val ivFeedback:ImageView = itemView.findViewById(R.id.iv_feedback)
 
+    private val tvQuizLabel:TextView = itemView.findViewById(R.id.tv_label_quiz)
+    private val tvWorkshopLabel:TextView = itemView.findViewById(R.id.tv_label_workshop)
+    private val tvFeedbacLabel:TextView = itemView.findViewById(R.id.tv_label_feedback)
+
+
     fun bind(model: Model){
         tvTitle.text=model.title
         tvDescription.text=model.description
@@ -34,21 +39,24 @@ class LectureViewHolder (
        // lifecycle.addObserver(youTubePlayerView)
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: YouTubePlayer) {
-                val videoId = "S0Q4gqBUs7c"
-                youTubePlayer.cueVideo(model.video, 0f)
+                 youTubePlayer.cueVideo(model.video, 0f)
             }
         })
 
         if (model.wokrshop.isEmpty()){
             ivWorkshop.visibility = View.INVISIBLE
+            tvWorkshopLabel.visibility = View.INVISIBLE
         }else{
             ivWorkshop.visibility = View.VISIBLE
+            tvWorkshopLabel.visibility = View.VISIBLE
         }
 
         if (model.feedback.isEmpty()){
             ivFeedback.visibility = View.INVISIBLE
+            tvFeedbacLabel.visibility = View.INVISIBLE
         }else{
             ivFeedback.visibility = View.VISIBLE
+            tvFeedbacLabel.visibility = View.VISIBLE
         }
 
         ivQuiz.setOnClickListener{
