@@ -12,7 +12,6 @@ import kotlinx.coroutines.launch
 
 class LectureViewModel : ViewModel() {
 
-    private val firebaseFirestone: FirebaseFirestore = FirebaseFirestore.getInstance()
     val model: MutableLiveData<MutableList<Model>> = MutableLiveData()
     val modelLiveData: LiveData<MutableList<Model>>
         get() = model
@@ -35,7 +34,14 @@ class LectureViewModel : ViewModel() {
                     val mAnswer2: String = document.getString("answer2") ?: ""
                     val mAnswer3: String = document.getString("answer3") ?: ""
                     val mAnswer4: String = document.getString("answer4") ?: ""
-                    val mRightAnswer: Int = Integer.parseInt(document.getString("rightanswer")  ?: "0")
+
+                    var mRightAnswer:Int = 0
+                    try {
+                        mRightAnswer = document.getDouble("rightanswer")?.toInt() ?: 0
+                    }catch (e : Exception){}
+                    try{
+                        mRightAnswer = Integer.parseInt(document.getString("rightanswer")  ?: "0")
+                    }catch (e: Exception){}
                     Log.e("XXX",mVideo)
 
                     val quizList = listOf<Quiz>(
