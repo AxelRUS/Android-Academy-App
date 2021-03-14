@@ -39,4 +39,8 @@
         <item name="android:paddingLeft">@dimen/list_horizontal_padding</item>
         <item name="android:paddingRight">@dimen/list_horizontal_padding</item>
     </style>
+
+    <style name="lecture_button_label">
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

@@ -5,4 +5,6 @@
     <string name="mentors">Менторы</string>
     <string name="kuba">Куба</string>
     <string name="quiz">Quiz</string>
+    <string name="workshop">Workshop</string>
+    <string name="feedback">Feedback</string>
 </resources>
