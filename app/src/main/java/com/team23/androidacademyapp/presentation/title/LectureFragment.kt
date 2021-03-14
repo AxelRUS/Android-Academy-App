@@ -36,11 +36,6 @@ class TitleFragment : Fragment() {
         button?.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_quizFragment)
         )
-
-
-        /*val quiz: ImageView? = view?.findViewById(R.id.iv_quiz)
-        quiz?.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_quizFragment))
-*/
         return view
     }
 
@@ -53,7 +48,7 @@ class TitleFragment : Fragment() {
         listLecture?.adapter = myAdapter
 
         viewModel = ViewModelProvider(this).get(LectureViewModel::class.java)
-        viewModel.model.observe(viewLifecycleOwner, Observer {model->
+        viewModel.lectureList.observe(viewLifecycleOwner, Observer { model->
             model?.let {
                 myAdapter.submitList(model)
                 myAdapter.notifyDataSetChanged()

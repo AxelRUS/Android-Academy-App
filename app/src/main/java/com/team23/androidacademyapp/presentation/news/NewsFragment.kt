@@ -36,7 +36,7 @@ class NewsFragment : Fragment() {
         adapter = NewsAdapter()
         recycler?.adapter = adapter
 
-        viewModel.modelNews.observe(this.viewLifecycleOwner, {
+        viewModel.newsList.observe(this.viewLifecycleOwner, {
             adapter?.bindNews(it)
             adapter?.notifyDataSetChanged()
         })

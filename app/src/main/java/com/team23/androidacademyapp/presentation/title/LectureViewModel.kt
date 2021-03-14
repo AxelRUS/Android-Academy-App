@@ -12,9 +12,9 @@ import kotlinx.coroutines.launch
 
 class LectureViewModel : ViewModel() {
 
-    val model: MutableLiveData<MutableList<Model>> = MutableLiveData()
-    val modelLiveData: LiveData<MutableList<Model>>
-        get() = model
+    private val _lectureList: MutableLiveData<MutableList<Model>> = MutableLiveData()
+    val lectureList: LiveData<MutableList<Model>>
+        get() = _lectureList
 
     init {
         viewModelScope.launch {
@@ -35,7 +35,7 @@ class LectureViewModel : ViewModel() {
                     val mAnswer3: String = document.getString("answer3") ?: ""
                     val mAnswer4: String = document.getString("answer4") ?: ""
 
-                    var mRightAnswer:Int = 0
+                    var mRightAnswer = 0
                     try {
                         mRightAnswer = document.getDouble("rightanswer")?.toInt() ?: 0
                     }catch (e : Exception){}
@@ -52,7 +52,7 @@ class LectureViewModel : ViewModel() {
                        mVideo,mTitle,mDescription, mWorkshop, mFeedback, quizList)
                     listData.add(model)
                 }
-                model.postValue(listData)
+                _lectureList.postValue(listData)
             }
         }
     }

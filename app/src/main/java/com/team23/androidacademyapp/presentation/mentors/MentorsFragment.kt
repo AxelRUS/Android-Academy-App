@@ -39,7 +39,7 @@ class MentorsFragment : Fragment() {
         adapter = MentorAdapter(clickListener)
         recycler?.adapter = adapter
 
-        viewModel.modelMentor.observe(this.viewLifecycleOwner, {
+        viewModel._mentorList.observe(this.viewLifecycleOwner, {
             adapter?.bindMentors(it)
             adapter?.notifyDataSetChanged()
         })

@@ -11,10 +11,9 @@ import kotlinx.coroutines.launch
 
 class MentorsViewModel : ViewModel() {
 
-    private val firebaseFirestone: FirebaseFirestore = FirebaseFirestore.getInstance()
-    val modelMentor: MutableLiveData<MutableList<Mentor>> = MutableLiveData()
-    private val modelLiveData: LiveData<MutableList<Mentor>>
-        get() = modelMentor
+    val _mentorList: MutableLiveData<MutableList<Mentor>> = MutableLiveData()
+    private val mentorList: LiveData<MutableList<Mentor>>
+        get() = _mentorList
 
     init {
         viewModelScope.launch {
@@ -33,7 +32,7 @@ class MentorsViewModel : ViewModel() {
                         )
                         listData.add(model)
                     }
-                    modelMentor.postValue(listData)
+                    _mentorList.postValue(listData)
                 }
         }
     }

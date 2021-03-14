@@ -1,6 +1,7 @@
 package com.team23.androidacademyapp.presentation.news
 
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,7 +12,10 @@ import kotlinx.coroutines.launch
 
 class NewsViewModel : ViewModel() {
 
-    val modelNews: MutableLiveData<MutableList<News>> = MutableLiveData()
+    private val _newsList: MutableLiveData<MutableList<News>> = MutableLiveData()
+    val newsList: LiveData<MutableList<News>>
+        get() = _newsList
+
     init {
         viewModelScope.launch {
             FirebaseFirestore.getInstance().collection("news").get()
@@ -27,7 +31,7 @@ class NewsViewModel : ViewModel() {
                         )
                         listData.add(model)
                     }
-                    modelNews.postValue(listData)
+                    _newsList.postValue(listData)
                 }
         }
     }
