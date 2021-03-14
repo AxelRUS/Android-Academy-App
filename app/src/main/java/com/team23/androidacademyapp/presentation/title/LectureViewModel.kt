@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.FirebaseFirestore
 import com.team23.androidacademyapp.domain.models.Model
+import com.team23.androidacademyapp.domain.models.Quiz
 import kotlinx.coroutines.launch
 
 class LectureViewModel : ViewModel() {
@@ -28,10 +29,21 @@ class LectureViewModel : ViewModel() {
                     val mDescription: String = document.getString("description") ?: ""
                     val mWorkshop: String = document.getString("workshop") ?: ""
                     val mFeedback: String = document.getString("feedback") ?: ""
+
+                    val mQuestion: String = document.getString("question") ?: ""
+                    val mAnswer1: String = document.getString("answer1") ?: ""
+                    val mAnswer2: String = document.getString("answer2") ?: ""
+                    val mAnswer3: String = document.getString("answer3") ?: ""
+                    val mAnswer4: String = document.getString("answer4") ?: ""
+                    val mRightAnswer: Int = Integer.parseInt(document.getString("rightanswer")  ?: "0")
                     Log.e("XXX",mVideo)
 
+                    val quizList = listOf<Quiz>(
+                        Quiz(mQuestion, listOf(mAnswer1, mAnswer2, mAnswer3, mAnswer4), mRightAnswer)
+                    )
+
                     val model = Model(
-                       mVideo,mTitle,mDescription, mWorkshop, mFeedback)
+                       mVideo,mTitle,mDescription, mWorkshop, mFeedback, quizList)
                     listData.add(model)
                 }
                 model.postValue(listData)
