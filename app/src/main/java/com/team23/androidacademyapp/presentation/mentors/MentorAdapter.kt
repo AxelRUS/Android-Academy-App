@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.request.RequestOptions
 import com.team23.androidacademyapp.R
-import com.team23.androidacademyapp.domain.models.ModelMentor
+import com.team23.androidacademyapp.domain.models.Mentor
 
 class MentorAdapter(
     private val clickListener: OnRecyclerItemClicked
@@ -16,7 +16,7 @@ class MentorAdapter(
         .fallback(R.drawable.ic_avatar_placeholder)
         .circleCrop()
 
-    private var mentors: List<ModelMentor> = listOf<ModelMentor>()
+    private var mentors: List<Mentor> = listOf<Mentor>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MentorViewHolder {
         return MentorViewHolder(
@@ -39,7 +39,7 @@ class MentorAdapter(
         return mentors.size
     }
 
-    fun bindMentors(newMentors: List<ModelMentor>) {
+    fun bindMentors(newMentors: List<Mentor>) {
         mentors = newMentors
     }
 

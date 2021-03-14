@@ -8,6 +8,12 @@ data class Model(
     val title:String,
     val description:String,
     val wokrshop:String,
-    val feedback:String
-) : Parcelable {
-}
+    val feedback:String,
+    val quizes: List<Quiz>
+) : Parcelable
+
+@Parcelize
+data class Quiz(
+    val question: String,
+    val answers: List<String>,
+    val rigthAnswer: Int) : Parcelable

@@ -2,15 +2,15 @@ package com.team23.androidacademyapp.presentation.title
 
 import android.content.Intent
 import android.net.Uri
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -24,7 +24,7 @@ class TitleFragment : Fragment() {
         fun newInstance() = TitleFragment()
     }
 
-    private lateinit var viewModel: TitleViewModel
+    private lateinit var viewModel: LectureViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,13 +46,13 @@ class TitleFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(TitleViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(LectureViewModel::class.java)
 
         val listLecture: RecyclerView? = view?.findViewById(R.id.lecture_list)
         val myAdapter = LectureAdapter(onQuizeClickListener, onWorkshopClickListener, onFeedbackClickListener)
         listLecture?.adapter = myAdapter
 
-        viewModel = ViewModelProvider(this).get(TitleViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(LectureViewModel::class.java)
         viewModel.model.observe(viewLifecycleOwner, Observer {model->
             model?.let {
                 myAdapter.submitList(model)
@@ -65,7 +65,7 @@ class TitleFragment : Fragment() {
         override fun onClick(model: Model) {
             val args = Bundle()
             args.putParcelable("model", model)
-            findNavController().navigate(R.id.action_titleFragment_to_quizFragment, )
+            findNavController().navigate(R.id.action_titleFragment_to_quizFragment, args)
         }
     }
 

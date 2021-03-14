@@ -36,15 +36,16 @@
             tools:text="News title"
             style="@style/text_title"/>
 
-        <ImageView
-            android:id="@+id/iv_content"
-            android:layout_width="0dp"
-            android:layout_marginStart="@dimen/space_16dp"
-            android:layout_marginTop="@dimen/space_16dp"
-            android:layout_marginEnd="@dimen/space_16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"
-            tools:srcCompat="@tools:sample/backgrounds/scenic"
-            style="@style/news_content_image" />
+    <ImageView
+        android:id="@+id/iv_content"
+        style="@style/news_content_image"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/space_16dp"
+        android:layout_marginTop="@dimen/space_16dp"
+        android:layout_marginEnd="@dimen/space_16dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
     </androidx.constraintlayout.widget.ConstraintLayout>

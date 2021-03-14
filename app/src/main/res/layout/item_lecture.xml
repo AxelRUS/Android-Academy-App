@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/list_item"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    style="@style/list_item">
+    android:layout_height="wrap_content">
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/youtube_pleer"
@@ -13,42 +13,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:videoId="Gb71h-cEUZs"/>
+        app:videoId="Gb71h-cEUZs" />
 
     <ImageView
         android:id="@+id/iv_workshop"
+        style="@style/lecture_button"
         android:layout_marginTop="@dimen/space_16dp"
-        android:layout_marginBottom="@dimen/space_16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/iv_feedback"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/iv_quiz"
         app:layout_constraintTop_toBottomOf="@+id/tv_description"
-        app:srcCompat="@drawable/icd"
-        style="@style/lecture_button" />
+        app:srcCompat="@drawable/icd" />
 
     <ImageView
         android:id="@+id/iv_quiz"
+        style="@style/lecture_button"
         app:layout_constraintBottom_toBottomOf="@+id/iv_workshop"
         app:layout_constraintEnd_toStartOf="@+id/iv_workshop"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/iv_workshop"
-        app:srcCompat="@drawable/ico"
-        style="@style/lecture_button" />
+        app:srcCompat="@drawable/ico" />
 
     <ImageView
         android:id="@+id/iv_feedback"
+        style="@style/lecture_button"
         app:layout_constraintBottom_toBottomOf="@+id/iv_workshop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/iv_workshop"
         app:layout_constraintTop_toTopOf="@+id/iv_workshop"
-        app:srcCompat="@drawable/icoc"
-        style="@style/lecture_button" />
+        app:srcCompat="@drawable/icoc" />
 
     <TextView
         android:id="@+id/iv_content"
+        style="@style/text_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space_16dp"
@@ -57,21 +56,52 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/youtube_pleer"
         app:layout_constraintTop_toBottomOf="@+id/youtube_pleer"
-        tools:text="Title"
-        style="@style/text_title" />
+        tools:text="Title" />
 
     <TextView
         android:id="@+id/tv_description"
+        style="@style/text_body"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space_16dp"
         android:layout_marginTop="@dimen/space_16dp"
         android:layout_marginEnd="@dimen/space_16dp"
-        tools:text="Description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/youtube_pleer"
         app:layout_constraintTop_toBottomOf="@+id/iv_content"
-        style="@style/text_body" />
+        tools:text="Description" />
+
+    <TextView
+        android:id="@+id/tv_label_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quiz"
+        app:layout_constraintEnd_toEndOf="@+id/iv_quiz"
+        app:layout_constraintStart_toStartOf="@+id/iv_quiz"
+        app:layout_constraintTop_toBottomOf="@+id/iv_quiz"
+        style="@style/lecture_button_label"/>
+
+    <TextView
+        android:id="@+id/tv_label_workshop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_16dp"
+        android:text="@string/workshop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/iv_workshop"
+        app:layout_constraintStart_toStartOf="@+id/iv_workshop"
+        app:layout_constraintTop_toBottomOf="@+id/iv_workshop"
+        style="@style/lecture_button_label" />
+
+    <TextView
+        android:id="@+id/tv_label_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback"
+        app:layout_constraintEnd_toEndOf="@+id/iv_feedback"
+        app:layout_constraintStart_toStartOf="@+id/iv_feedback"
+        app:layout_constraintTop_toBottomOf="@+id/iv_feedback"
+        style="@style/lecture_button_label"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

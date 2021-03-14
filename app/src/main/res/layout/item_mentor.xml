@@ -1,32 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/list_item"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    style="@style/list_item">
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_telegram"
+        android:layout_marginBottom="@dimen/space_16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_github"
+        app:srcCompat="@drawable/telergam"
+        style="@style/mentor_item_icon" />
+
+    <ImageView
+        android:id="@+id/iv_github"
+        android:layout_marginBottom="@dimen/space_16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_telegram"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_instagram"
+        app:srcCompat="@drawable/github"
+        style="@style/mentor_item_icon"/>
+
+    <ImageView
+        android:id="@+id/iv_instagram"
+        android:layout_marginBottom="@dimen/space_16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_github"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+        app:srcCompat="@drawable/instagram"
+        style="@style/mentor_item_icon"/>
 
     <ImageView
         android:id="@+id/iv_avatar"
+        style="@style/mentor_avatar"
         android:layout_marginStart="@dimen/space_16dp"
         android:layout_marginTop="@dimen/space_16dp"
         android:layout_marginBottom="@dimen/space_16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        style="@style/mentor_avatar"/>
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tv_name"
+        style="@style/mentor_list_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space_16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_avatar"
         app:layout_constraintTop_toTopOf="@+id/iv_avatar"
-        tools:text="Name"
-        style="@style/mentor_list_title" />
+        tools:text="Name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

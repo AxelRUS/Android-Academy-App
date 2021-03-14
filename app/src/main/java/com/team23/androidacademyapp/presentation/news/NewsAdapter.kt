@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.request.RequestOptions
 import com.team23.androidacademyapp.R
-import com.team23.androidacademyapp.domain.models.ModelNews
+import com.team23.androidacademyapp.domain.models.News
 
 class NewsAdapter(
 
@@ -17,7 +17,7 @@ class NewsAdapter(
         .fallback(R.drawable.ic_avatar_placeholder)
         .circleCrop()
 
-    private var news: List<ModelNews> = listOf<ModelNews>()
+    private var news: List<News> = listOf<News>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         return NewsViewHolder(
@@ -37,11 +37,11 @@ class NewsAdapter(
         return news.size
     }
 
-    fun bindNews(newNews: List<ModelNews>) {
+    fun bindNews(newNews: List<News>) {
         news = newNews
     }
 }
 
 interface OnRecyclerItemClicked {
-    fun onClick(news: ModelNews)
+    fun onClick(news: News)
 }
