@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.team23.androidacademyapp.R
 import com.team23.androidacademyapp.domain.models.Model
+import com.team23.androidacademyapp.presentation.title.LectureViewHolder
 import com.team23.androidacademyapp.presentation.title.OnFeedbackClickListener
 import com.team23.androidacademyapp.presentation.title.OnQuizClickListener
 import com.team23.androidacademyapp.presentation.title.OnWorkshopClickListener

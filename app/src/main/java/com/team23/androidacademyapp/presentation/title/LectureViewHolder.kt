@@ -1,4 +1,4 @@
-package com.team23.androidacademyapp.domain
+package com.team23.androidacademyapp.presentation.title
 
 import android.view.View
 import android.widget.ImageView
@@ -9,9 +9,6 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import com.team23.androidacademyapp.R
 import com.team23.androidacademyapp.domain.models.Model
-import com.team23.androidacademyapp.presentation.title.OnFeedbackClickListener
-import com.team23.androidacademyapp.presentation.title.OnQuizClickListener
-import com.team23.androidacademyapp.presentation.title.OnWorkshopClickListener
 
 class LectureViewHolder (
     itemView: View,
