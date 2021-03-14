@@ -1,11 +1,9 @@
 <resources>
-    <string name="app_name">Android Academy App</string>
-    <string name="lessons">Уроки</string>
-    <string name="news">Новости</string>
-    <string name="mentors">Менторы</string>
-    <string name="kuba">Куба</string>
-    <string name="quiz">Quiz</string>
-    <string name="name">Name</string>
+    <string name="app_name" translatable="false">Android Academy App</string>
+    <string name="lessons">Lessons</string>
+    <string name="news">News</string>
+    <string name="mentors">Mentors</string>
+    <string name="quiz">Quizz</string>
     <string name="workshop">Workshop</string>
     <string name="feedback">Feedback</string>
 </resources>
